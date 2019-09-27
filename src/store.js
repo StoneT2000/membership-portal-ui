@@ -2,6 +2,7 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
+import logger from 'redux-logger'
 
 import createRootReducer from './reducers';
 
@@ -14,7 +15,8 @@ export default function configureStore(preloadedState) {
     compose(
       applyMiddleware(
         routerMiddleware(history), // for dispatching history actions
-        thunk
+        thunk,
+        logger, // for logging redux actions
       )
     )
   );
