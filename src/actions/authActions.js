@@ -1,4 +1,4 @@
-import { AUTH_USER, UNAUTH_USER } from './types';
+import { AUTH_USER, UNAUTH_USER, GENERATE_AUTH_TOKEN } from './types';
 import { replace } from 'connected-react-router';
 
 export const loginUser = (values) => dispatch => {
@@ -14,6 +14,12 @@ export const logoutUser = () => dispatch => {
     type: UNAUTH_USER
   })
 };
+
+export const generateJWT = () => dispatch => {
+  dispatch({
+    type: GENERATE_AUTH_TOKEN
+  })
+}
 
 export const redirectHome= () => dispatch => {
   dispatch(replace('/'));

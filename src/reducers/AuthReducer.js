@@ -1,8 +1,9 @@
-import { AUTH_USER, UNAUTH_USER } from '../actions/types';
+import { AUTH_USER, UNAUTH_USER, GENERATE_AUTH_TOKEN } from '../actions/types';
 
 const initialState = {
   admin: false,
-  authenticated: false
+  authenticated: false,
+  token: null,
 };
 
 const AuthReducer = (state = initialState, action) => {
@@ -20,6 +21,8 @@ const AuthReducer = (state = initialState, action) => {
         admin: false,
         authenticated: false
       };
+    case GENERATE_AUTH_TOKEN:
+      return;
     default:
       return state;
   }
