@@ -12,7 +12,7 @@ const NavProfileContainer = props => {
 
   return (
     <ProfileCard
-      exp={props.exp}
+      exp={150}
       image={props.image}
       level={getLevel(props.exp)}
       name={props.name}
